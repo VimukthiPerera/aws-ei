@@ -818,7 +818,7 @@ Outputs:
         - !GetAtt
           - WSO2EILoadBalancer
           - DNSName
-        - ':8280/'
+        - ':8280'
     Description: ESB HTTP URL
   ESBHttpsUrl:
     Value: !Join
@@ -827,7 +827,7 @@ Outputs:
         - !GetAtt
           - WSO2EILoadBalancer
           - DNSName
-        - ':8243/'
+        - ':8243'
     Description: ESB HTTPSURL
 
 Parameters:
