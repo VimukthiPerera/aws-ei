@@ -793,7 +793,7 @@ Resources:
     DependsOn:
       - WSO2EILoadBalancerSecurityGroup
 Outputs:
-  IntegratorCarbonURL:
+  MgtConsoleUrl:
     Value: !Join
       - ''
       - - 'https://'
@@ -802,6 +802,34 @@ Outputs:
           - DNSName
         - '/carbon'
     Description: Integrator Carbon Management Console URL
+  CarbonServerUrl:
+    Value: !Join
+      - ''
+      - - 'https://'
+        - !GetAtt
+          - WSO2EILoadBalancer
+          - DNSName
+        - '/services'
+    Description: Carbon Server URL
+  ESBHttpUrl:
+    Value: !Join
+      - ''
+      - - 'https://'
+        - !GetAtt
+          - WSO2EILoadBalancer
+          - DNSName
+        - ':8280/'
+    Description: ESB HTTP URL
+  ESBHttpsUrl:
+    Value: !Join
+      - ''
+      - - 'https://'
+        - !GetAtt
+          - WSO2EILoadBalancer
+          - DNSName
+        - ':8243/'
+    Description: ESB HTTPSURL
+
 Parameters:
   AWSAccessKeyId:
     Type: String
